@@ -45,3 +45,9 @@ async function networkAndCache(req) {
     return cached;
   }
 }
+
+self.addEventListener('sync', function(event) {
+  if (event.tag == 'myFirstSync') {
+    event.waitUntil(console.log{"Sync success"));
+  }
+});
